@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>signal lost game</title>
-    <linl rel="style sheet" href="style.css" />
+    <link rel="style sheet" href="style.css" />
 </head>
 
 <body>
@@ -15,7 +15,7 @@
     <main>
         <section class="game-container">
          <div id="unity-container" class="unity-desktop">
-                 <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
+                 <canvas id="unity-canvas" width="960" height="600" tabindex="-1"></canvas>
                  <div id="unity-loading-bar">
                      <div id="unity-logo"></div>
                      <div id="unity-progress-bar-empty">
@@ -29,12 +29,13 @@
                      <div id="unity-build-title">signal-lost-</div>
                     </div>
             </div>
+        </section>
             <section class="leaderboard">
             <h2>Top Survivors</h2>
             <ol id="leaderboard-list">
                 <li class="loading">Loading Scores...</li>
-                <button id="refresh-btn">Refresh</button> 
             </ol>
+            <button id="refresh-btn">Refresh</button> 
         </section>
     </main>
     <footer>
