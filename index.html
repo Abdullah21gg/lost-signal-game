@@ -14,11 +14,22 @@
     </header>
     <main>
         <section class="game-container">
-            <div class="game-placeholder">
-                <p>game build goes here</p>
+         <div id="unity-container" class="unity-desktop">
+                 <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
+                 <div id="unity-loading-bar">
+                     <div id="unity-logo"></div>
+                     <div id="unity-progress-bar-empty">
+                         <div id="unity-progress-bar-full"></div>                         
+                         </div>
+                        </div>
+                    <div id="unity-warning"> </div>
+                    <div id="unity-footer">
+                     <div id="unity-logo-title-footer"></div>
+                     <div id="unity-fullscreen-button"></div>
+                     <div id="unity-build-title">signal-lost-</div>
+                    </div>
             </div>
-        </section>
-        <section class="leaderboard">
+            <section class="leaderboard">
             <h2>Top Survivors</h2>
             <ol id="leaderboard-list">
                 <li class="loading">Loading Scores...</li>
