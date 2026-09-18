@@ -1,0 +1,207 @@
+:root {
+    --bg: #0b0e14;
+    --panel: #131826;
+    --accent: #4de8c9;
+    --accent-dim: #2a9d8f;
+    --text: #e8efc1;
+    --text-dim: #8892a6;
+}
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: "segoi UI", system-ui, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    text-align: center;
+    padding: 2.5rem 1rem 1rem;
+}
+header h1{
+    font-size: 2.5rem;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    text-shadow: rgba(77,232,201,0.4);
+    .tagline{
+        color: var(--accent);
+        margin-top: 0.5rem;
+    }
+
+}
+main{
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 1.5rem;
+    max-width:1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+.game-container{
+    flex: 2;
+    min-width: 320px;
+}
+.leaderboard{
+    flex: 1;
+    min-width: 240px;
+    background :var(--panel);
+    border-radius: 8px;
+    padding: 1.25rem;
+}
+.leaderboard h2 {
+    color: var(--accent);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing:0.05em;
+}
+#leaderboard-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0.75rem;
+    background: rgba(255,255,255,0.03);
+    border-radius: 4px;
+}
+#leaderboard-list li.loading,
+#leaderboard-list li.empty {
+justify-content: center;
+color:var(--text-dim);
+}
+#refresh-btn{
+    margin-top: 1rem;
+    width: 100%;
+    padding: 0.6rem;
+    background: var(--accent-dim);
+    color: var(--text);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.15 ease;
+}
+#refresh-button:hover{
+    background: var(--accent);
+    color: #0b0e14
+}
+footer{
+    text-align: center;
+    padding: 1rem;
+    color:var(--text-dim);
+    font-size: 0.8rem;
+}
+/* unity webgl style*/
+#unity-container{
+    position:relative;
+    width: 960px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+#unity-container.unity-desktop{
+    width: 960px;
+}
+#unity-container.unity-mobile{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+#unity-canvas{
+    background: #1a1a1a;
+    border-radius: 8px;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.unity-mobile #unity-canvas{
+    width: 100%;
+    height: 100%;
+}
+#unity-loading-bar{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width:100%;
+    height:100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(11,14,20,0.9);
+    border-radius: 8px;
+}
+#unity-logo{
+    width: 154px;
+    height: 130px;
+    background: transparent center no-repeat;
+    background-size: contain;
+    margin-bottom: 10px;
+}
+#unity-progress-bar-empty{
+    width: 141px;
+    height: 18px;
+    background: var(--panel);
+    border-radius: 9px;
+    overflow: hidden;
+}
+#unity-progress-bar-full{
+    width: 0%;
+    height:100%;
+    background: var(--accent);
+    transition: width 0.1s ease;   
+}
+#unity-warning{
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translatex(50%);
+    z-index: 10;
+}
+#unity-warning > div{
+    border-radius: 4px;
+    margin: 5px;
+    font-size: 0.85rem;
+    color: #000;
+}
+#unity-footer{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 4px 10px;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+}
+#unity-fullscreen-button{
+    width: 24px;
+    height: 24px;
+    background: var(--panel) center no-repeat;
+    background-size: 16px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+#unity-fullscreen-button:before{
+    content: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-maximize-2"><path d="M15 3h6v6"/><path d="m21 3-7 7"/><path d="m3 21 7-7"/><path d="M9 21H3v-6"/></svg>';
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 24px;
+    color: var(--text);
+}
+#unity-fullscreen-button:hover{
+background-color: var(--accent-dim)
+}
+#unity-build-title{
+    flex: 1;
+    text-align: left;
+}
