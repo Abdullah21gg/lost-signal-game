@@ -105,7 +105,7 @@ footer{
     margin: 0 auto;
 }
 #unity-container.unity-desktop{
-    width: 960px;
+    max-width: 960px;
 }
 #unity-container.unity-mobile{
     width: 100%;
