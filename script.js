@@ -1,4 +1,4 @@
-      var canvas = document.querySelector("#unity-canvas");
+ var canvas = document.querySelector("#unity-canvas");
 
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
@@ -82,7 +82,7 @@
         canvas.style.height = "600px";
       }
 
-      document.querySelector("#unity-loading-bar").style.display = "block";
+      document.querySelector("#unity-loading-bar").style.display = "flex";
 
       var script = document.createElement("script");
       script.src = loaderUrl;
