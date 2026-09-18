@@ -1,0 +1,57 @@
+:root {
+    --bg: #0b0e14;
+    --panel: #131826;
+    --accent: #4de8c9;
+    --accent-dim: #2a9d8f;
+    --text: #e8efc1;
+    --text-dim: #8892a6;
+}
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: "segoi UI", system-ui, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    text-align: center;
+    padding: 2.5rem 1rem 1rem;
+}
+header h1{
+    font-size: 2.5rem;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    text-shadow: rgba(77,232,201,0.4);
+    .tagline{
+        color: var(--accent);
+        margin-top: 0.5rem;
+    }
+
+}
+main{
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 1.5rem;
+    max-width:1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+.game-container{
+    flex: 2;
+    min-width: 320px;
+}
+.leaderboard{
+    flex: 1;
+    min-width: 240px;
+    background:var(--panel)
+    border-radius
+}
