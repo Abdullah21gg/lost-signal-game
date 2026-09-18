@@ -101,3 +101,24 @@
             };
 
       document.body.appendChild(script);
+      const leaderboardList = document.querySelector("#leaderboard-list")
+      const refreshBtn = document.querySelector("#refresh-btn")
+      async function loadLeaderboard() {
+        leaderboardList.innerHTML = '<li class="loading">Loading Scores...</li>';
+        try {
+          const response = await fetch("https://abdogaming205.pythonanywhere.com/Score")
+          const data = await response.json();
+          if (!data || data.length === 0) {
+            leaderboardList.innerHTML = '<li class="empty">no scores yet!</li>';
+            return;
+          }
+          leaderboardList.innerHTML = data
+          .map((entry) => `<li><span>${entry.player}</span><span>${entry.score}</span></li>`)
+          .join("")
+        } catch(err){
+          leaderboardList.innerHTML = '<li class="empty"> failed to load scores </li>'
+        }
+      }
+      refreshBtn.addEventListener("click", loadLeaderboard);
+      loadLeaderboard();
+        
