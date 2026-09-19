@@ -106,7 +106,7 @@
       async function loadLeaderboard() {
         leaderboardList.innerHTML = '<li class="loading">Loading Scores...</li>';
         try {
-          const response = await fetch("https://abdogaming205.pythonanywhere.com/Score")
+          const response = await fetch("https://abdogaming205.pythonanywhere.com/score")
           const data = await response.json();
           if (!data || data.length === 0) {
             leaderboardList.innerHTML = '<li class="empty">no scores yet!</li>';
