@@ -113,7 +113,7 @@
             return;
           }
           leaderboardList.innerHTML = data
-          .map((entry) => `<li><span>${entry.player}</span><span>${entry.Score}</span></li>`)
+          .map((entry) => `<li><span>${entry.name}</span><span>${entry.Score}</span></li>`)
           .join("")
         } catch(err){
           leaderboardList.innerHTML = '<li class="empty"> failed to load scores </li>'
