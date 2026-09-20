@@ -121,4 +121,39 @@
       }
       refreshBtn.addEventListener("click", loadLeaderboard);
       loadLeaderboard();
-        
+        let currentFinalScore = 0;
+        window.ReceiveScoreFromUnity = function(score){
+          currentFinalScore = score;
+          console.log("Score received from unity")
+        }
+        const submitBtn = document.querySelector("#submit-score-btn")
+        const nameInput = document.querySelector("#player-name-input")
+        submitBtn.addEventListener("click", async () => {
+          const playerName = nameInput.value.trim();
+          if (!playerName) {
+            alert("Please Enter Your Name First")
+            return;
+          }
+          const dataToSubmit = {
+            name: playerName,
+            Score: currentFinalScore
+          };
+          try{
+            const response = await fetch("https://abdogaming205.pythonanywhere.com/Scores", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify(dataToSubmit)
+            })
+            if (response.ok) { 
+              alert("Score Saved");
+              nameInput.value="";
+              loadLeaderboard()
+          } else{
+            alert("Failed To Save Score. Check backend logs.");
+          }
+        } catch (err) {
+          console.error("Error submitting score:", err)
+        }
+      });
